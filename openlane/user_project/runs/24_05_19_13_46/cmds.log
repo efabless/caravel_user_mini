@@ -1,0 +1,30 @@
+Sun May 19 10:46:30 UTC 2024 - Executing "{openroad -exit -no_init -python /openlane/scripts/odbpy/lefutil.py get_metal_layers -o /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/layers.list /Users/marwan/work/caravel_user_sram/dependencies/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef}"
+
+Sun May 19 10:46:30 UTC 2024 - Executing "{/openlane/scripts/mergeLef.py -o /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/merged.nom.lef -i /Users/marwan/work/caravel_user_sram/dependencies/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef {/Users/marwan/work/caravel_user_sram/dependencies/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /Users/marwan/work/caravel_user_sram/dependencies/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null}"
+
+Sun May 19 10:46:30 UTC 2024 - Executing "{/openlane/scripts/mergeLef.py -o /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/merged.min.lef -i /Users/marwan/work/caravel_user_sram/dependencies/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__min.tlef {/Users/marwan/work/caravel_user_sram/dependencies/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /Users/marwan/work/caravel_user_sram/dependencies/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null}"
+
+Sun May 19 10:46:30 UTC 2024 - Executing "{/openlane/scripts/mergeLef.py -o /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/merged.max.lef -i /Users/marwan/work/caravel_user_sram/dependencies/pdks/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__max.tlef {/Users/marwan/work/caravel_user_sram/dependencies/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd.lef /Users/marwan/work/caravel_user_sram/dependencies/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef} |& tee /dev/null}"
+
+Sun May 19 10:46:30 UTC 2024 - Executing "{python3 /openlane/scripts/mergeLib.py --output /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/synthesis/merged.lib --name sky130A_merged /Users/marwan/work/caravel_user_sram/dependencies/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib}"
+
+Sun May 19 10:46:30 UTC 2024 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/synthesis/trimmed.lib.exclude.list --output /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/synthesis/trimmed.lib /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/synthesis/merged.lib}"
+
+Sun May 19 10:46:30 UTC 2024 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/cts/cts.lib.exclude.list --output /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/cts/cts.lib /Users/marwan/work/caravel_user_sram/dependencies/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib}"
+
+Sun May 19 10:46:31 UTC 2024 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/cts/cts-fastest.lib.exclude.list --output /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/cts/cts-fastest.lib /Users/marwan/work/caravel_user_sram/dependencies/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ff_n40C_1v95.lib}"
+
+Sun May 19 10:46:32 UTC 2024 - Executing "{python3 /openlane/scripts/libtrim.py --cell-file /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/cts/cts-slowest.lib.exclude.list --output /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/cts/cts-slowest.lib /Users/marwan/work/caravel_user_sram/dependencies/pdks/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__ss_100C_1v60.lib}"
+
+Sun May 19 10:46:32 UTC 2024 - Executing "{python3 /openlane/scripts/new_tracks.py -i /Users/marwan/work/caravel_user_sram/dependencies/pdks/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tracks.info -o /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/routing/config.tracks}"
+
+Sun May 19 10:46:32 UTC 2024 - Executing "{echo {OpenLane 30ee1388932eb55a89ad84ee43997bfe3a386421} > /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/OPENLANE_VERSION}"
+
+Sun May 19 10:46:32 UTC 2024 - Executing "{yosys -c /openlane/scripts/yosys/blackbox.tcl}"
+
+Sun May 19 10:46:32 UTC 2024 - Executing "{verilator -Wall --lint-only --Wno-DECLFILENAME --top-module user_project /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/tmp/synthesis/blackbox/sky130_fd_sc_hd__blackbox.v /Users/marwan/work/caravel_user_mpc/openlane/user_project/../../verilog/rtl/defines.v /Users/marwan/work/caravel_user_mpc/openlane/user_project/../../verilog/rtl/user_project.v /Users/marwan/work/caravel_user_mpc/openlane/user_project/../../verilog/rtl/counter.v -Wno-fatal --relative-includes |& tee /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/logs/synthesis/linter.log /dev/null}"
+
+Sun May 19 10:46:32 UTC 2024 - Executing "{python3 /openlane/scripts/write_runtime.py --conclude --seconds --time-in 1716115592 {flow failed}}"
+
+Sun May 19 10:46:32 UTC 2024 - Executing "{python3 /openlane/scripts/generate_reports.py -d /Users/marwan/work/caravel_user_mpc/openlane/user_project --design_name user_project --tag 24_05_19_13_46 --output_file /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/reports/metrics.csv --man_report /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46/reports/manufacturability.rpt --run_path /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_13_46}"
+

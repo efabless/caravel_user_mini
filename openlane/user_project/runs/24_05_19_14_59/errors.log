@@ -1,0 +1,14 @@
+[ERROR]: during executing: "openroad -exit -no_init -python /openlane/scripts/odbpy/lefutil.py get_metal_layers -o /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_14_59/tmp/layers.list /Users/marwan/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd__nom.tlef"
+[ERROR]: Exit code: 1
+[ERROR]: Last 10 lines:
+OpenROAD 41a51eaf4ca2171c92ff38afb91eb37bbd3f36da 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Traceback (most recent call last):
+  File "/openlane/scripts/odbpy/lefutil.py", line 17, in <module>
+    from reader import OdbReader
+  File "/openlane/scripts/odbpy/reader.py", line 30
+    if primary := OdbReader.primary_reader:
+                ^
+SyntaxError: invalid syntax
+

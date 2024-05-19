@@ -1,0 +1,699 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+Startpoint: la_data_in[31] (input port clocked by clk)
+Endpoint: _683_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock clk (rise edge)
+                          6.00    6.00   clock network delay (propagated)
+                         10.00   16.00 v input external delay
+     1    0.00    0.44    0.00   16.00 v la_data_in[31] (in)
+                                         la_data_in[31] (net)
+                  0.44    0.00   16.00 v hold215/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.00    0.05    0.75   16.75 v hold215/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                         net525 (net)
+                  0.05    0.00   16.75 v input25/A (sky130_fd_sc_hd__clkbuf_2)
+     1    0.01    0.05    0.14   16.88 v input25/X (sky130_fd_sc_hd__clkbuf_2)
+                                         net25 (net)
+                  0.05    0.00   16.88 v hold216/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.01    0.09    0.64   17.52 v hold216/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                         net526 (net)
+                  0.09    0.00   17.52 v _344_/B (sky130_fd_sc_hd__and2b_1)
+     1    0.00    0.03    0.18   17.70 v _344_/X (sky130_fd_sc_hd__and2b_1)
+                                         _086_ (net)
+                  0.03    0.00   17.70 v hold217/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.00    0.05    0.57   18.28 v hold217/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                         net527 (net)
+                  0.05    0.00   18.28 v _345_/B1 (sky130_fd_sc_hd__a21oi_1)
+     1    0.00    0.10    0.11   18.39 ^ _345_/Y (sky130_fd_sc_hd__a21oi_1)
+                                         _087_ (net)
+                  0.10    0.00   18.39 ^ hold218/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.00    0.05    0.58   18.96 ^ hold218/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                         net528 (net)
+                  0.05    0.00   18.96 ^ hold143/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.00    0.06    0.57   19.53 ^ hold143/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                         net453 (net)
+                  0.06    0.00   19.53 ^ hold219/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     2    0.01    0.10    0.61   20.14 ^ hold219/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                         net529 (net)
+                  0.10    0.00   20.14 ^ max_cap250/A (sky130_fd_sc_hd__buf_4)
+     1    0.02    0.06    0.15   20.29 ^ max_cap250/X (sky130_fd_sc_hd__buf_4)
+                                         net250 (net)
+                  0.06    0.00   20.30 ^ hold144/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     2    0.02    0.21    0.70   21.00 ^ hold144/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                         net454 (net)
+                  0.21    0.00   21.00 ^ _351_/A (sky130_fd_sc_hd__nand2_2)
+     1    0.00    0.05    0.06   21.06 v _351_/Y (sky130_fd_sc_hd__nand2_2)
+                                         _092_ (net)
+                  0.05    0.00   21.06 v hold155/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.00    0.05    0.57   21.63 v hold155/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                         net465 (net)
+                  0.05    0.00   21.63 v hold145/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.00    0.05    0.58   22.21 v hold145/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                         net455 (net)
+                  0.05    0.00   22.21 v hold156/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     4    0.03    0.16    0.71   22.91 v hold156/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                         net466 (net)
+                  0.16    0.00   22.92 v fanout210/A (sky130_fd_sc_hd__buf_2)
+     5    0.03    0.09    0.24   23.15 v fanout210/X (sky130_fd_sc_hd__buf_2)
+                                         net210 (net)
+                  0.09    0.00   23.15 v _352_/A (sky130_fd_sc_hd__inv_2)
+     3    0.02    0.10    0.12   23.28 ^ _352_/Y (sky130_fd_sc_hd__inv_2)
+                                         _030_ (net)
+                  0.10    0.00   23.28 ^ fanout195/A (sky130_fd_sc_hd__clkbuf_4)
+    10    0.05    0.16    0.25   23.53 ^ fanout195/X (sky130_fd_sc_hd__clkbuf_4)
+                                         net195 (net)
+                  0.16    0.00   23.53 ^ _511_/B1 (sky130_fd_sc_hd__o21ai_1)
+     1    0.00    0.06    0.09   23.63 v _511_/Y (sky130_fd_sc_hd__o21ai_1)
+                                         _207_ (net)
+                  0.06    0.00   23.63 v hold708/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.00    0.05    0.58   24.21 v hold708/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                         net1018 (net)
+                  0.05    0.00   24.21 v hold27/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.00    0.06    0.58   24.79 v hold27/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                         net337 (net)
+                  0.06    0.00   24.79 v _512_/B1 (sky130_fd_sc_hd__a21oi_1)
+     1    0.00    0.12    0.13   24.92 ^ _512_/Y (sky130_fd_sc_hd__a21oi_1)
+                                         _208_ (net)
+                  0.12    0.00   24.92 ^ hold28/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.00    0.05    0.58   25.50 ^ hold28/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                         net338 (net)
+                  0.05    0.00   25.50 ^ _513_/B1 (sky130_fd_sc_hd__a31o_1)
+     1    0.00    0.05    0.10   25.60 ^ _513_/X (sky130_fd_sc_hd__a31o_1)
+                                         _045_ (net)
+                  0.05    0.00   25.60 ^ hold29/A (sky130_fd_sc_hd__dlygate4sd3_1)
+     1    0.00    0.05    0.55   26.16 ^ hold29/X (sky130_fd_sc_hd__dlygate4sd3_1)
+                                         net339 (net)
+                  0.05    0.00   26.16 ^ _683_/D (sky130_fd_sc_hd__dfxtp_4)
+                                 26.16   data arrival time
+
+                         30.00   30.00   clock clk (rise edge)
+                          4.50   34.50   clock source latency
+     1    0.01    0.60    0.00   34.50 ^ wb_clk_i (in)
+                                         wb_clk_i (net)
+                  0.60    0.00   34.50 ^ _343_/A1 (sky130_fd_sc_hd__mux2_1)
+     1    0.01    0.08    0.25   34.75 ^ _343_/X (sky130_fd_sc_hd__mux2_1)
+                                         count.clk (net)
+                  0.08    0.00   34.75 ^ clkbuf_0_count.clk/A (sky130_fd_sc_hd__clkbuf_16)
+     8    0.03    0.06    0.14   34.89 ^ clkbuf_0_count.clk/X (sky130_fd_sc_hd__clkbuf_16)
+                                         clknet_0_count.clk (net)
+                  0.06    0.00   34.89 ^ clkbuf_3_6_0_count.clk/A (sky130_fd_sc_hd__clkbuf_8)
+    11    0.04    0.09    0.16   35.05 ^ clkbuf_3_6_0_count.clk/X (sky130_fd_sc_hd__clkbuf_8)
+                                         clknet_3_6_0_count.clk (net)
+                  0.09    0.00   35.05 ^ _683_/CLK (sky130_fd_sc_hd__dfxtp_4)
+                         -0.25   34.80   clock uncertainty
+                          0.00   34.80   clock reconvergence pessimism
+                         -0.05   34.75   library setup time
+                                 34.75   data required time
+-----------------------------------------------------------------------------
+                                 34.75   data required time
+                                -26.16   data arrival time
+-----------------------------------------------------------------------------
+                                  8.59   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+clkbuf_3_6_0_count.clk/X                 10     11        (VIOLATED)
+
+
+max slew violations count Typical: 0
+max fanout violations count Typical: 1
+max cap violations count Typical: 0
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 120 unannotated drivers.
+ io_in[0]
+ io_in[10]
+ io_in[11]
+ io_in[12]
+ io_in[13]
+ io_in[14]
+ io_in[15]
+ io_in[16]
+ io_in[17]
+ io_in[18]
+ io_in[19]
+ io_in[1]
+ io_in[20]
+ io_in[21]
+ io_in[22]
+ io_in[23]
+ io_in[24]
+ io_in[25]
+ io_in[26]
+ io_in[27]
+ io_in[28]
+ io_in[29]
+ io_in[2]
+ io_in[30]
+ io_in[31]
+ io_in[32]
+ io_in[33]
+ io_in[34]
+ io_in[35]
+ io_in[3]
+ io_in[4]
+ io_in[5]
+ io_in[6]
+ io_in[7]
+ io_in[8]
+ io_in[9]
+ user_clock2
+ wbs_adr_i[0]
+ wbs_adr_i[10]
+ wbs_adr_i[11]
+ wbs_adr_i[12]
+ wbs_adr_i[13]
+ wbs_adr_i[14]
+ wbs_adr_i[15]
+ wbs_adr_i[16]
+ wbs_adr_i[17]
+ wbs_adr_i[18]
+ wbs_adr_i[19]
+ wbs_adr_i[1]
+ wbs_adr_i[20]
+ wbs_adr_i[21]
+ wbs_adr_i[22]
+ wbs_adr_i[23]
+ wbs_adr_i[24]
+ wbs_adr_i[25]
+ wbs_adr_i[26]
+ wbs_adr_i[27]
+ wbs_adr_i[28]
+ wbs_adr_i[29]
+ wbs_adr_i[2]
+ wbs_adr_i[30]
+ wbs_adr_i[31]
+ wbs_adr_i[3]
+ wbs_adr_i[4]
+ wbs_adr_i[5]
+ wbs_adr_i[6]
+ wbs_adr_i[7]
+ wbs_adr_i[8]
+ wbs_adr_i[9]
+ wbs_dat_i[30]
+ wbs_dat_i[31]
+ user_project_262/HI
+ user_project_263/HI
+ user_project_264/HI
+ user_project_265/HI
+ user_project_266/HI
+ user_project_267/HI
+ user_project_268/HI
+ user_project_269/HI
+ user_project_270/HI
+ user_project_271/HI
+ user_project_272/HI
+ user_project_273/HI
+ user_project_274/HI
+ user_project_275/HI
+ user_project_276/HI
+ user_project_277/HI
+ user_project_278/HI
+ user_project_279/HI
+ user_project_280/HI
+ user_project_281/HI
+ user_project_282/HI
+ user_project_283/HI
+ user_project_284/HI
+ user_project_285/HI
+ user_project_286/HI
+ user_project_287/HI
+ user_project_288/HI
+ user_project_289/HI
+ user_project_290/HI
+ user_project_291/HI
+ user_project_292/HI
+ user_project_293/HI
+ user_project_294/HI
+ user_project_295/HI
+ user_project_296/HI
+ user_project_297/HI
+ user_project_298/HI
+ user_project_299/HI
+ user_project_300/HI
+ user_project_301/HI
+ user_project_302/HI
+ user_project_303/HI
+ user_project_304/HI
+ user_project_305/HI
+ user_project_306/HI
+ user_project_307/LO
+ user_project_308/LO
+ user_project_309/LO
+ user_project_310/LO
+Found 269 partially unannotated drivers.
+ wb_clk_i
+ wbs_dat_i[10]
+ wbs_dat_i[15]
+ wbs_dat_i[25]
+ wbs_dat_i[7]
+ wbs_sel_i[0]
+ _343_/X
+ _346_/Y
+ _395_/X
+ _399_/X
+ _410_/Y
+ _440_/X
+ _448_/X
+ _452_/X
+ _453_/X
+ _457_/X
+ _462_/X
+ _473_/X
+ _479_/X
+ _489_/X
+ _494_/X
+ _504_/X
+ _510_/X
+ _516_/X
+ _517_/X
+ _522_/X
+ _528_/X
+ _536_/Y
+ _544_/X
+ _551_/X
+ _553_/X
+ _558_/Y
+ _567_/Y
+ _575_/X
+ _583_/X
+ _586_/X
+ _591_/Y
+ _602_/X
+ _611_/X
+ _613_/X
+ _617_/Y
+ _618_/X
+ _625_/Y
+ _626_/X
+ _670_/Q
+ _675_/Q
+ _676_/Q
+ _677_/Q
+ _678_/Q
+ _679_/Q
+ _683_/Q
+ _686_/Q
+ _690_/Q
+ _691_/Q
+ _692_/Q
+ _693_/Q
+ _694_/Q
+ _695_/Q
+ _696_/Q
+ _697_/Q
+ _698_/Q
+ clkbuf_0_count.clk/X
+ clkbuf_3_4_0_count.clk/X
+ clkbuf_3_5_0_count.clk/X
+ fanout197/X
+ fanout199/X
+ fanout200/X
+ fanout201/X
+ fanout202/X
+ fanout204/X
+ fanout205/X
+ fanout207/X
+ fanout215/X
+ fanout216/X
+ fanout217/X
+ fanout251/X
+ fanout260/X
+ hold104/X
+ hold113/X
+ hold117/X
+ hold136/X
+ hold151/X
+ hold152/X
+ hold154/X
+ hold220/X
+ hold223/X
+ hold226/X
+ hold229/X
+ hold241/X
+ hold253/X
+ hold262/X
+ hold265/X
+ hold271/X
+ hold28/X
+ hold292/X
+ hold295/X
+ hold312/X
+ hold315/X
+ hold316/X
+ hold318/X
+ hold319/X
+ hold321/X
+ hold322/X
+ hold330/X
+ hold331/X
+ hold334/X
+ hold337/X
+ hold348/X
+ hold349/X
+ hold352/X
+ hold364/X
+ hold368/X
+ hold371/X
+ hold372/X
+ hold374/X
+ hold375/X
+ hold377/X
+ hold383/X
+ hold388/X
+ hold390/X
+ hold391/X
+ hold393/X
+ hold394/X
+ hold397/X
+ hold398/X
+ hold400/X
+ hold401/X
+ hold407/X
+ hold412/X
+ hold413/X
+ hold419/X
+ hold424/X
+ hold430/X
+ hold431/X
+ hold436/X
+ hold437/X
+ hold443/X
+ hold490/X
+ hold494/X
+ hold498/X
+ hold504/X
+ hold505/X
+ hold506/X
+ hold507/X
+ hold508/X
+ hold509/X
+ hold510/X
+ hold511/X
+ hold513/X
+ hold516/X
+ hold517/X
+ hold520/X
+ hold521/X
+ hold522/X
+ hold523/X
+ hold528/X
+ hold529/X
+ hold533/X
+ hold538/X
+ hold546/X
+ hold553/X
+ hold558/X
+ hold559/X
+ hold561/X
+ hold562/X
+ hold563/X
+ hold567/X
+ hold572/X
+ hold575/X
+ hold576/X
+ hold578/X
+ hold584/X
+ hold585/X
+ hold589/X
+ hold590/X
+ hold597/X
+ hold598/X
+ hold604/X
+ hold614/X
+ hold619/X
+ hold624/X
+ hold629/X
+ hold634/X
+ hold636/X
+ hold644/X
+ hold660/X
+ hold661/X
+ hold666/X
+ hold667/X
+ hold671/X
+ hold672/X
+ hold677/X
+ hold678/X
+ hold683/X
+ hold684/X
+ hold687/X
+ hold70/X
+ hold796/X
+ hold806/X
+ hold825/X
+ hold829/X
+ hold837/X
+ hold847/X
+ hold849/X
+ hold851/X
+ input1/X
+ input10/X
+ input11/X
+ input12/X
+ input13/X
+ input14/X
+ input15/X
+ input2/X
+ input23/X
+ input26/X
+ input27/X
+ input28/X
+ input29/X
+ input3/X
+ input30/X
+ input31/X
+ input32/X
+ input33/X
+ input4/X
+ input5/X
+ input6/X
+ input7/X
+ input8/X
+ input80/X
+ input81/X
+ input83/X
+ input85/X
+ input86/X
+ input87/X
+ input88/X
+ input9/X
+ output109/X
+ output110/X
+ output111/X
+ output112/X
+ output113/X
+ output115/X
+ output116/X
+ output117/X
+ output118/X
+ output122/X
+ output139/X
+ output140/X
+ output141/X
+ output142/X
+ output143/X
+ output145/X
+ output146/X
+ output147/X
+ output148/X
+ output151/X
+ user_project_263/LO
+ user_project_268/LO
+ user_project_310/HI
+ wire219/X
+ wire220/X
+ wire221/X
+ wire222/X
+ wire223/X
+ wire224/X
+ wire225/X
+ wire226/X
+ wire227/X
+ wire228/X
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 1
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 37 input ports missing set_input_delay.
+  io_in[0]
+  io_in[10]
+  io_in[11]
+  io_in[12]
+  io_in[13]
+  io_in[14]
+  io_in[15]
+  io_in[16]
+  io_in[17]
+  io_in[18]
+  io_in[19]
+  io_in[1]
+  io_in[20]
+  io_in[21]
+  io_in[22]
+  io_in[23]
+  io_in[24]
+  io_in[25]
+  io_in[26]
+  io_in[27]
+  io_in[28]
+  io_in[29]
+  io_in[2]
+  io_in[30]
+  io_in[31]
+  io_in[32]
+  io_in[33]
+  io_in[34]
+  io_in[35]
+  io_in[3]
+  io_in[4]
+  io_in[5]
+  io_in[6]
+  io_in[7]
+  io_in[8]
+  io_in[9]
+  user_clock2
+Warning: There are 109 unconstrained endpoints.
+  io_oeb[0]
+  io_oeb[10]
+  io_oeb[11]
+  io_oeb[12]
+  io_oeb[13]
+  io_oeb[14]
+  io_oeb[15]
+  io_oeb[16]
+  io_oeb[17]
+  io_oeb[18]
+  io_oeb[19]
+  io_oeb[1]
+  io_oeb[20]
+  io_oeb[21]
+  io_oeb[22]
+  io_oeb[23]
+  io_oeb[24]
+  io_oeb[25]
+  io_oeb[26]
+  io_oeb[27]
+  io_oeb[28]
+  io_oeb[29]
+  io_oeb[2]
+  io_oeb[30]
+  io_oeb[31]
+  io_oeb[32]
+  io_oeb[33]
+  io_oeb[34]
+  io_oeb[35]
+  io_oeb[3]
+  io_oeb[4]
+  io_oeb[5]
+  io_oeb[6]
+  io_oeb[7]
+  io_oeb[8]
+  io_oeb[9]
+  io_out[0]
+  io_out[10]
+  io_out[11]
+  io_out[12]
+  io_out[13]
+  io_out[14]
+  io_out[15]
+  io_out[16]
+  io_out[17]
+  io_out[18]
+  io_out[19]
+  io_out[1]
+  io_out[20]
+  io_out[21]
+  io_out[22]
+  io_out[23]
+  io_out[24]
+  io_out[25]
+  io_out[26]
+  io_out[27]
+  io_out[28]
+  io_out[29]
+  io_out[2]
+  io_out[30]
+  io_out[31]
+  io_out[32]
+  io_out[33]
+  io_out[34]
+  io_out[35]
+  io_out[3]
+  io_out[4]
+  io_out[5]
+  io_out[6]
+  io_out[7]
+  io_out[8]
+  io_out[9]
+  la_data_out[0]
+  la_data_out[10]
+  la_data_out[11]
+  la_data_out[12]
+  la_data_out[13]
+  la_data_out[14]
+  la_data_out[15]
+  la_data_out[16]
+  la_data_out[17]
+  la_data_out[18]
+  la_data_out[19]
+  la_data_out[1]
+  la_data_out[20]
+  la_data_out[21]
+  la_data_out[22]
+  la_data_out[23]
+  la_data_out[24]
+  la_data_out[25]
+  la_data_out[26]
+  la_data_out[27]
+  la_data_out[28]
+  la_data_out[29]
+  la_data_out[2]
+  la_data_out[30]
+  la_data_out[31]
+  la_data_out[3]
+  la_data_out[4]
+  la_data_out[5]
+  la_data_out[6]
+  la_data_out[7]
+  la_data_out[8]
+  la_data_out[9]
+  user_irq[0]
+  user_irq[1]
+  user_irq[2]
+  wbs_dat_o[30]
+  wbs_dat_o[31]

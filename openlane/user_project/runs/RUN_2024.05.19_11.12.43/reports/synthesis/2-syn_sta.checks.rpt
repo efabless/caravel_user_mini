@@ -1,0 +1,1191 @@
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+Startpoint: wbs_cyc_i (input port clocked by clk)
+Endpoint: _698_ (rising edge-triggered flip-flop clocked by clk)
+Path Group: clk
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00   clock clk (rise edge)
+                          6.00    6.00   clock network delay (propagated)
+                         10.00   16.00 ^ input external delay
+     4    0.01    0.44    0.00   16.00 ^ wbs_cyc_i (in)
+                                         wbs_cyc_i (net)
+                  0.44    0.00   16.00 ^ _347_/B (sky130_fd_sc_hd__and2_2)
+    12    0.04    0.21    0.37   16.37 ^ _347_/X (sky130_fd_sc_hd__and2_2)
+                                         _088_ (net)
+                  0.21    0.00   16.37 ^ _396_/A2 (sky130_fd_sc_hd__o2111a_2)
+     1    0.00    0.04    0.20   16.57 ^ _396_/X (sky130_fd_sc_hd__o2111a_2)
+                                         _106_ (net)
+                  0.04    0.00   16.57 ^ _399_/B (sky130_fd_sc_hd__and4_2)
+     3    0.00    0.07    0.22   16.79 ^ _399_/X (sky130_fd_sc_hd__and4_2)
+                                         _109_ (net)
+                  0.07    0.00   16.79 ^ _400_/B (sky130_fd_sc_hd__and2_2)
+    85    0.28    1.41    1.15   17.94 ^ _400_/X (sky130_fd_sc_hd__and2_2)
+                                         _110_ (net)
+                  1.41    0.00   17.94 ^ _631_/B (sky130_fd_sc_hd__and4_2)
+     1    0.01    0.10    0.48   18.42 ^ _631_/X (sky130_fd_sc_hd__and4_2)
+                                         _312_ (net)
+                  0.10    0.00   18.42 ^ _632_/B (sky130_fd_sc_hd__xnor2_2)
+     2    0.00    0.11    0.07   18.49 v _632_/Y (sky130_fd_sc_hd__xnor2_2)
+                                         _313_ (net)
+                  0.11    0.00   18.49 v _636_/A2 (sky130_fd_sc_hd__a211o_2)
+     1    0.00    0.05    0.37   18.87 v _636_/X (sky130_fd_sc_hd__a211o_2)
+                                         _317_ (net)
+                  0.05    0.00   18.87 v _637_/A2 (sky130_fd_sc_hd__a21oi_2)
+     1    0.00    0.08    0.12   18.99 ^ _637_/Y (sky130_fd_sc_hd__a21oi_2)
+                                         _060_ (net)
+                  0.08    0.00   18.99 ^ _698_/D (sky130_fd_sc_hd__dfxtp_2)
+                                 18.99   data arrival time
+
+                         30.00   30.00   clock clk (rise edge)
+                          4.50   34.50   clock source latency
+     1    0.00    0.60    0.00   34.50 ^ wb_clk_i (in)
+                                         wb_clk_i (net)
+                  0.60    0.00   34.50 ^ _343_/A1 (sky130_fd_sc_hd__mux2_1)
+    61    0.11    0.99    0.86   35.36 ^ _343_/X (sky130_fd_sc_hd__mux2_1)
+                                         count.clk (net)
+                  0.99    0.00   35.36 ^ _698_/CLK (sky130_fd_sc_hd__dfxtp_2)
+                         -0.25   35.11   clock uncertainty
+                          0.00   35.11   clock reconvergence pessimism
+                          0.02   35.13   library setup time
+                                 35.13   data required time
+-----------------------------------------------------------------------------
+                                 35.13   data required time
+                                -18.99   data arrival time
+-----------------------------------------------------------------------------
+                                 16.14   slack (MET)
+
+
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+max slew
+
+Pin                                    Limit    Slew   Slack
+------------------------------------------------------------
+_400_/X                                 0.75    1.41   -0.66 (VIOLATED)
+_401_/B                                 0.75    1.41   -0.66 (VIOLATED)
+_402_/A2                                0.75    1.41   -0.66 (VIOLATED)
+_404_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_408_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_409_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_414_/D                                 0.75    1.41   -0.66 (VIOLATED)
+_415_/A3                                0.75    1.41   -0.66 (VIOLATED)
+_417_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_418_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_423_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_425_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_426_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_431_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_432_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_436_/A2                                0.75    1.41   -0.66 (VIOLATED)
+_438_/A1                                0.75    1.41   -0.66 (VIOLATED)
+_439_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_440_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_444_/A1                                0.75    1.41   -0.66 (VIOLATED)
+_445_/B                                 0.75    1.41   -0.66 (VIOLATED)
+_447_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_448_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_454_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_456_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_457_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_462_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_463_/A1                                0.75    1.41   -0.66 (VIOLATED)
+_468_/A2                                0.75    1.41   -0.66 (VIOLATED)
+_470_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_472_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_473_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_478_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_479_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_483_/A2                                0.75    1.41   -0.66 (VIOLATED)
+_486_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_488_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_489_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_494_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_495_/A1                                0.75    1.41   -0.66 (VIOLATED)
+_499_/A2                                0.75    1.41   -0.66 (VIOLATED)
+_501_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_503_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_504_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_509_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_510_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_514_/A2                                0.75    1.41   -0.66 (VIOLATED)
+_518_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_521_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_522_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_527_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_528_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_533_/A2                                0.75    1.41   -0.66 (VIOLATED)
+_535_/A1                                0.75    1.41   -0.66 (VIOLATED)
+_536_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_537_/A1                                0.75    1.41   -0.66 (VIOLATED)
+_541_/A1                                0.75    1.41   -0.66 (VIOLATED)
+_542_/B                                 0.75    1.41   -0.66 (VIOLATED)
+_543_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_544_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_552_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_553_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_558_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_559_/A1                                0.75    1.41   -0.66 (VIOLATED)
+_567_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_568_/A1                                0.75    1.41   -0.66 (VIOLATED)
+_573_/B                                 0.75    1.41   -0.66 (VIOLATED)
+_574_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_575_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_584_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_585_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_586_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_591_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_592_/A1                                0.75    1.41   -0.66 (VIOLATED)
+_599_/A2                                0.75    1.41   -0.66 (VIOLATED)
+_601_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_602_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_609_/A                                 0.75    1.41   -0.66 (VIOLATED)
+_610_/B1_N                              0.75    1.41   -0.66 (VIOLATED)
+_611_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_619_/S                                 0.75    1.41   -0.66 (VIOLATED)
+_625_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_626_/A1                                0.75    1.41   -0.66 (VIOLATED)
+_631_/B                                 0.75    1.41   -0.66 (VIOLATED)
+_633_/B1                                0.75    1.41   -0.66 (VIOLATED)
+_634_/A1                                0.75    1.41   -0.66 (VIOLATED)
+_343_/X                                 0.75    1.00   -0.25 (VIOLATED)
+_638_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_639_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_640_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_641_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_642_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_643_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_644_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_645_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_646_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_647_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_648_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_649_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_650_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_651_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_652_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_653_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_654_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_655_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_656_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_657_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_658_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_659_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_660_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_661_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_662_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_663_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_664_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_665_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_666_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_667_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_668_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_669_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_670_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_671_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_672_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_673_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_674_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_675_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_676_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_677_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_678_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_679_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_680_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_681_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_682_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_683_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_684_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_685_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_686_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_687_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_688_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_689_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_690_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_691_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_692_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_693_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_694_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_695_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_696_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_697_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+_698_/CLK                               0.75    1.00   -0.25 (VIOLATED)
+io_out[1]                               0.75    0.79   -0.04 (VIOLATED)
+_354_/A0                                0.75    0.79   -0.04 (VIOLATED)
+_407_/A                                 0.75    0.79   -0.04 (VIOLATED)
+_414_/B                                 0.75    0.79   -0.04 (VIOLATED)
+_415_/A1                                0.75    0.79   -0.04 (VIOLATED)
+_422_/C                                 0.75    0.79   -0.04 (VIOLATED)
+_670_/Q                                 0.75    0.79   -0.04 (VIOLATED)
+io_out[8]                               0.75    0.79   -0.04 (VIOLATED)
+_361_/A0                                0.75    0.79   -0.04 (VIOLATED)
+_461_/A                                 0.75    0.79   -0.04 (VIOLATED)
+_468_/A1                                0.75    0.79   -0.04 (VIOLATED)
+_469_/B                                 0.75    0.79   -0.04 (VIOLATED)
+_484_/B                                 0.75    0.79   -0.04 (VIOLATED)
+_677_/Q                                 0.75    0.79   -0.04 (VIOLATED)
+io_out[27]                              0.75    0.78   -0.03 (VIOLATED)
+_380_/A0                                0.75    0.78   -0.03 (VIOLATED)
+_616_/A                                 0.75    0.78   -0.03 (VIOLATED)
+_617_/A                                 0.75    0.78   -0.03 (VIOLATED)
+_630_/B                                 0.75    0.78   -0.03 (VIOLATED)
+_696_/Q                                 0.75    0.78   -0.03 (VIOLATED)
+io_out[4]                               0.75    0.78   -0.03 (VIOLATED)
+_357_/A0                                0.75    0.78   -0.03 (VIOLATED)
+_430_/A                                 0.75    0.78   -0.03 (VIOLATED)
+_436_/A1                                0.75    0.78   -0.03 (VIOLATED)
+_437_/B                                 0.75    0.78   -0.03 (VIOLATED)
+_452_/D                                 0.75    0.78   -0.03 (VIOLATED)
+_673_/Q                                 0.75    0.78   -0.03 (VIOLATED)
+io_out[16]                              0.75    0.78   -0.03 (VIOLATED)
+_369_/A0                                0.75    0.78   -0.03 (VIOLATED)
+_526_/A                                 0.75    0.78   -0.03 (VIOLATED)
+_533_/A1                                0.75    0.78   -0.03 (VIOLATED)
+_534_/A                                 0.75    0.78   -0.03 (VIOLATED)
+_550_/A                                 0.75    0.78   -0.03 (VIOLATED)
+_685_/Q                                 0.75    0.78   -0.03 (VIOLATED)
+io_out[0]                               0.75    0.78   -0.03 (VIOLATED)
+_353_/A0                                0.75    0.78   -0.03 (VIOLATED)
+_401_/A                                 0.75    0.78   -0.03 (VIOLATED)
+_402_/A1                                0.75    0.78   -0.03 (VIOLATED)
+_414_/C                                 0.75    0.78   -0.03 (VIOLATED)
+_415_/A2                                0.75    0.78   -0.03 (VIOLATED)
+_422_/D                                 0.75    0.78   -0.03 (VIOLATED)
+_669_/Q                                 0.75    0.78   -0.03 (VIOLATED)
+io_out[24]                              0.75    0.78   -0.03 (VIOLATED)
+_377_/A0                                0.75    0.78   -0.03 (VIOLATED)
+_590_/A                                 0.75    0.78   -0.03 (VIOLATED)
+_597_/A                                 0.75    0.78   -0.03 (VIOLATED)
+_598_/A                                 0.75    0.78   -0.03 (VIOLATED)
+_599_/A1                                0.75    0.78   -0.03 (VIOLATED)
+_693_/Q                                 0.75    0.78   -0.03 (VIOLATED)
+io_out[12]                              0.75    0.77   -0.02 (VIOLATED)
+_365_/A0                                0.75    0.77   -0.02 (VIOLATED)
+_493_/A                                 0.75    0.77   -0.02 (VIOLATED)
+_499_/A1                                0.75    0.77   -0.02 (VIOLATED)
+_500_/A                                 0.75    0.77   -0.02 (VIOLATED)
+_681_/Q                                 0.75    0.77   -0.02 (VIOLATED)
+io_out[14]                              0.75    0.77   -0.02 (VIOLATED)
+_367_/A0                                0.75    0.77   -0.02 (VIOLATED)
+_508_/A                                 0.75    0.77   -0.02 (VIOLATED)
+_514_/A1                                0.75    0.77   -0.02 (VIOLATED)
+_515_/A                                 0.75    0.77   -0.02 (VIOLATED)
+_683_/Q                                 0.75    0.77   -0.02 (VIOLATED)
+io_out[20]                              0.75    0.77   -0.02 (VIOLATED)
+_373_/A0                                0.75    0.77   -0.02 (VIOLATED)
+_557_/A                                 0.75    0.77   -0.02 (VIOLATED)
+_563_/A1                                0.75    0.77   -0.02 (VIOLATED)
+_564_/A                                 0.75    0.77   -0.02 (VIOLATED)
+_689_/Q                                 0.75    0.77   -0.02 (VIOLATED)
+io_out[10]                              0.75    0.77   -0.02 (VIOLATED)
+_363_/A0                                0.75    0.77   -0.02 (VIOLATED)
+_477_/A                                 0.75    0.77   -0.02 (VIOLATED)
+_483_/A1                                0.75    0.77   -0.02 (VIOLATED)
+_484_/C                                 0.75    0.77   -0.02 (VIOLATED)
+_679_/Q                                 0.75    0.77   -0.02 (VIOLATED)
+io_out[28]                              0.75    0.76   -0.01 (VIOLATED)
+_381_/A0                                0.75    0.76   -0.01 (VIOLATED)
+_624_/A                                 0.75    0.76   -0.01 (VIOLATED)
+_631_/A                                 0.75    0.76   -0.01 (VIOLATED)
+_697_/Q                                 0.75    0.76   -0.01 (VIOLATED)
+io_out[22]                              0.75    0.75   -0.00 (VIOLATED)
+_375_/A0                                0.75    0.75   -0.00 (VIOLATED)
+_572_/B1                                0.75    0.75   -0.00 (VIOLATED)
+_573_/A                                 0.75    0.75   -0.00 (VIOLATED)
+_581_/A                                 0.75    0.75   -0.00 (VIOLATED)
+_582_/A                                 0.75    0.75   -0.00 (VIOLATED)
+_691_/Q                                 0.75    0.75   -0.00 (VIOLATED)
+io_out[29]                              0.75    0.75   -0.00 (VIOLATED)
+_382_/A0                                0.75    0.75   -0.00 (VIOLATED)
+_632_/A                                 0.75    0.75   -0.00 (VIOLATED)
+_698_/Q                                 0.75    0.75   -0.00 (VIOLATED)
+
+max fanout
+
+Pin                                   Limit Fanout  Slack
+---------------------------------------------------------
+_400_/X                                  10     85    -75 (VIOLATED)
+_343_/X                                  10     61    -51 (VIOLATED)
+_346_/Y                                  10     38    -28 (VIOLATED)
+_351_/Y                                  10     31    -21 (VIOLATED)
+_348_/Y                                  10     25    -15 (VIOLATED)
+_352_/Y                                  10     21    -11 (VIOLATED)
+_410_/Y                                  10     19     -9 (VIOLATED)
+_464_/Y                                  10     16     -6 (VIOLATED)
+_529_/Y                                  10     16     -6 (VIOLATED)
+_383_/Y                                  10     15     -5 (VIOLATED)
+_347_/X                                  10     12     -2 (VIOLATED)
+_349_/Y                                  10     12     -2 (VIOLATED)
+_593_/Y                                  10     12     -2 (VIOLATED)
+_350_/X                                  10     11        (VIOLATED)
+
+
+max slew violations count Typical: 237
+max fanout violations count Typical: 14
+max cap violations count Typical: 0
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 683 unannotated drivers.
+ io_in[0]
+ io_in[10]
+ io_in[11]
+ io_in[12]
+ io_in[13]
+ io_in[14]
+ io_in[15]
+ io_in[16]
+ io_in[17]
+ io_in[18]
+ io_in[19]
+ io_in[1]
+ io_in[20]
+ io_in[21]
+ io_in[22]
+ io_in[23]
+ io_in[24]
+ io_in[25]
+ io_in[26]
+ io_in[27]
+ io_in[28]
+ io_in[29]
+ io_in[2]
+ io_in[30]
+ io_in[31]
+ io_in[32]
+ io_in[33]
+ io_in[34]
+ io_in[35]
+ io_in[3]
+ io_in[4]
+ io_in[5]
+ io_in[6]
+ io_in[7]
+ io_in[8]
+ io_in[9]
+ la_data_in[0]
+ la_data_in[10]
+ la_data_in[11]
+ la_data_in[12]
+ la_data_in[13]
+ la_data_in[14]
+ la_data_in[15]
+ la_data_in[16]
+ la_data_in[17]
+ la_data_in[18]
+ la_data_in[19]
+ la_data_in[1]
+ la_data_in[20]
+ la_data_in[21]
+ la_data_in[22]
+ la_data_in[23]
+ la_data_in[24]
+ la_data_in[25]
+ la_data_in[26]
+ la_data_in[27]
+ la_data_in[28]
+ la_data_in[29]
+ la_data_in[2]
+ la_data_in[30]
+ la_data_in[31]
+ la_data_in[3]
+ la_data_in[4]
+ la_data_in[5]
+ la_data_in[6]
+ la_data_in[7]
+ la_data_in[8]
+ la_data_in[9]
+ la_oenb[0]
+ la_oenb[10]
+ la_oenb[11]
+ la_oenb[12]
+ la_oenb[13]
+ la_oenb[14]
+ la_oenb[15]
+ la_oenb[16]
+ la_oenb[17]
+ la_oenb[18]
+ la_oenb[19]
+ la_oenb[1]
+ la_oenb[20]
+ la_oenb[21]
+ la_oenb[22]
+ la_oenb[23]
+ la_oenb[24]
+ la_oenb[25]
+ la_oenb[26]
+ la_oenb[27]
+ la_oenb[28]
+ la_oenb[29]
+ la_oenb[2]
+ la_oenb[30]
+ la_oenb[31]
+ la_oenb[3]
+ la_oenb[4]
+ la_oenb[5]
+ la_oenb[6]
+ la_oenb[7]
+ la_oenb[8]
+ la_oenb[9]
+ user_clock2
+ wb_clk_i
+ wb_rst_i
+ wbs_adr_i[0]
+ wbs_adr_i[10]
+ wbs_adr_i[11]
+ wbs_adr_i[12]
+ wbs_adr_i[13]
+ wbs_adr_i[14]
+ wbs_adr_i[15]
+ wbs_adr_i[16]
+ wbs_adr_i[17]
+ wbs_adr_i[18]
+ wbs_adr_i[19]
+ wbs_adr_i[1]
+ wbs_adr_i[20]
+ wbs_adr_i[21]
+ wbs_adr_i[22]
+ wbs_adr_i[23]
+ wbs_adr_i[24]
+ wbs_adr_i[25]
+ wbs_adr_i[26]
+ wbs_adr_i[27]
+ wbs_adr_i[28]
+ wbs_adr_i[29]
+ wbs_adr_i[2]
+ wbs_adr_i[30]
+ wbs_adr_i[31]
+ wbs_adr_i[3]
+ wbs_adr_i[4]
+ wbs_adr_i[5]
+ wbs_adr_i[6]
+ wbs_adr_i[7]
+ wbs_adr_i[8]
+ wbs_adr_i[9]
+ wbs_cyc_i
+ wbs_dat_i[0]
+ wbs_dat_i[10]
+ wbs_dat_i[11]
+ wbs_dat_i[12]
+ wbs_dat_i[13]
+ wbs_dat_i[14]
+ wbs_dat_i[15]
+ wbs_dat_i[16]
+ wbs_dat_i[17]
+ wbs_dat_i[18]
+ wbs_dat_i[19]
+ wbs_dat_i[1]
+ wbs_dat_i[20]
+ wbs_dat_i[21]
+ wbs_dat_i[22]
+ wbs_dat_i[23]
+ wbs_dat_i[24]
+ wbs_dat_i[25]
+ wbs_dat_i[26]
+ wbs_dat_i[27]
+ wbs_dat_i[28]
+ wbs_dat_i[29]
+ wbs_dat_i[2]
+ wbs_dat_i[30]
+ wbs_dat_i[31]
+ wbs_dat_i[3]
+ wbs_dat_i[4]
+ wbs_dat_i[5]
+ wbs_dat_i[6]
+ wbs_dat_i[7]
+ wbs_dat_i[8]
+ wbs_dat_i[9]
+ wbs_sel_i[0]
+ wbs_sel_i[1]
+ wbs_sel_i[2]
+ wbs_sel_i[3]
+ wbs_stb_i
+ wbs_we_i
+ _318_/Y
+ _319_/Y
+ _320_/Y
+ _321_/Y
+ _322_/Y
+ _323_/Y
+ _324_/Y
+ _325_/Y
+ _326_/Y
+ _327_/Y
+ _328_/Y
+ _329_/Y
+ _330_/Y
+ _331_/Y
+ _332_/Y
+ _333_/Y
+ _334_/Y
+ _335_/Y
+ _336_/Y
+ _337_/Y
+ _338_/Y
+ _339_/Y
+ _340_/Y
+ _341_/Y
+ _342_/Y
+ _343_/X
+ _344_/X
+ _345_/Y
+ _346_/Y
+ _347_/X
+ _348_/Y
+ _349_/Y
+ _350_/X
+ _351_/Y
+ _352_/Y
+ _353_/X
+ _354_/X
+ _355_/X
+ _356_/X
+ _357_/X
+ _358_/X
+ _359_/X
+ _360_/X
+ _361_/X
+ _362_/X
+ _363_/X
+ _364_/X
+ _365_/X
+ _366_/X
+ _367_/X
+ _368_/X
+ _369_/X
+ _370_/X
+ _371_/X
+ _372_/X
+ _373_/X
+ _374_/X
+ _375_/X
+ _376_/X
+ _377_/X
+ _378_/X
+ _379_/X
+ _380_/X
+ _381_/X
+ _382_/X
+ _383_/Y
+ _384_/X
+ _385_/Y
+ _386_/Y
+ _387_/Y
+ _388_/Y
+ _389_/X
+ _390_/X
+ _391_/X
+ _392_/X
+ _393_/X
+ _394_/X
+ _395_/X
+ _396_/X
+ _397_/X
+ _398_/X
+ _399_/X
+ _400_/X
+ _401_/Y
+ _402_/X
+ _403_/X
+ _404_/X
+ _405_/X
+ _406_/X
+ _407_/X
+ _408_/Y
+ _409_/X
+ _410_/Y
+ _411_/Y
+ _412_/Y
+ _413_/X
+ _414_/X
+ _415_/Y
+ _416_/X
+ _417_/Y
+ _418_/X
+ _419_/Y
+ _420_/Y
+ _421_/X
+ _422_/X
+ _423_/Y
+ _424_/Y
+ _425_/Y
+ _426_/X
+ _427_/Y
+ _428_/Y
+ _429_/X
+ _430_/X
+ _431_/Y
+ _432_/X
+ _433_/Y
+ _434_/Y
+ _435_/X
+ _436_/X
+ _437_/X
+ _438_/X
+ _439_/Y
+ _440_/X
+ _441_/Y
+ _442_/Y
+ _443_/X
+ _444_/Y
+ _445_/X
+ _446_/X
+ _447_/Y
+ _448_/X
+ _449_/Y
+ _450_/Y
+ _451_/X
+ _452_/X
+ _453_/X
+ _454_/Y
+ _455_/Y
+ _456_/Y
+ _457_/X
+ _458_/Y
+ _459_/X
+ _460_/X
+ _461_/X
+ _462_/X
+ _463_/Y
+ _464_/Y
+ _465_/Y
+ _466_/X
+ _467_/X
+ _468_/Y
+ _469_/X
+ _470_/X
+ _471_/X
+ _472_/Y
+ _473_/X
+ _474_/Y
+ _475_/Y
+ _476_/X
+ _477_/Y
+ _478_/Y
+ _479_/X
+ _480_/Y
+ _481_/Y
+ _482_/X
+ _483_/X
+ _484_/X
+ _485_/X
+ _486_/Y
+ _487_/Y
+ _488_/Y
+ _489_/X
+ _490_/Y
+ _491_/X
+ _492_/X
+ _493_/X
+ _494_/X
+ _495_/Y
+ _496_/Y
+ _497_/X
+ _498_/X
+ _499_/X
+ _500_/X
+ _501_/Y
+ _502_/Y
+ _503_/Y
+ _504_/X
+ _505_/Y
+ _506_/Y
+ _507_/X
+ _508_/X
+ _509_/Y
+ _510_/X
+ _511_/Y
+ _512_/Y
+ _513_/X
+ _514_/X
+ _515_/X
+ _516_/X
+ _517_/X
+ _518_/Y
+ _519_/X
+ _520_/Y
+ _521_/Y
+ _522_/X
+ _523_/Y
+ _524_/X
+ _525_/X
+ _526_/X
+ _527_/Y
+ _528_/X
+ _529_/Y
+ _530_/Y
+ _531_/Y
+ _532_/X
+ _533_/X
+ _534_/X
+ _535_/X
+ _536_/Y
+ _537_/X
+ _538_/Y
+ _539_/X
+ _540_/Y
+ _541_/Y
+ _542_/X
+ _543_/Y
+ _544_/X
+ _545_/X
+ _546_/Y
+ _547_/X
+ _548_/X
+ _549_/Y
+ _550_/X
+ _551_/X
+ _552_/Y
+ _553_/X
+ _554_/Y
+ _555_/X
+ _556_/X
+ _557_/Y
+ _558_/Y
+ _559_/X
+ _560_/Y
+ _561_/X
+ _562_/Y
+ _563_/X
+ _564_/X
+ _565_/X
+ _566_/X
+ _567_/Y
+ _568_/X
+ _569_/Y
+ _570_/X
+ _571_/Y
+ _572_/Y
+ _573_/X
+ _574_/Y
+ _575_/X
+ _576_/X
+ _577_/Y
+ _578_/X
+ _579_/X
+ _580_/Y
+ _581_/X
+ _582_/X
+ _583_/X
+ _584_/X
+ _585_/Y
+ _586_/X
+ _587_/Y
+ _588_/X
+ _589_/X
+ _590_/Y
+ _591_/Y
+ _592_/X
+ _593_/Y
+ _594_/Y
+ _595_/X
+ _596_/Y
+ _597_/X
+ _598_/X
+ _599_/X
+ _600_/X
+ _601_/Y
+ _602_/X
+ _603_/Y
+ _604_/Y
+ _605_/X
+ _606_/X
+ _607_/X
+ _608_/X
+ _609_/Y
+ _610_/X
+ _611_/X
+ _612_/X
+ _613_/X
+ _614_/X
+ _615_/X
+ _616_/Y
+ _617_/Y
+ _618_/X
+ _619_/X
+ _620_/Y
+ _621_/X
+ _622_/X
+ _623_/Y
+ _624_/X
+ _625_/Y
+ _626_/X
+ _627_/Y
+ _628_/X
+ _629_/Y
+ _630_/X
+ _631_/X
+ _632_/Y
+ _633_/Y
+ _634_/X
+ _635_/Y
+ _636_/X
+ _637_/Y
+ _638_/Q
+ _639_/Q
+ _640_/Q
+ _641_/Q
+ _642_/Q
+ _643_/Q
+ _644_/Q
+ _645_/Q
+ _646_/Q
+ _647_/Q
+ _648_/Q
+ _649_/Q
+ _650_/Q
+ _651_/Q
+ _652_/Q
+ _653_/Q
+ _654_/Q
+ _655_/Q
+ _656_/Q
+ _657_/Q
+ _658_/Q
+ _659_/Q
+ _660_/Q
+ _661_/Q
+ _662_/Q
+ _663_/Q
+ _664_/Q
+ _665_/Q
+ _666_/Q
+ _667_/Q
+ _668_/Q
+ _669_/Q
+ _670_/Q
+ _671_/Q
+ _672_/Q
+ _673_/Q
+ _674_/Q
+ _675_/Q
+ _676_/Q
+ _677_/Q
+ _678_/Q
+ _679_/Q
+ _680_/Q
+ _681_/Q
+ _682_/Q
+ _683_/Q
+ _684_/Q
+ _685_/Q
+ _686_/Q
+ _687_/Q
+ _688_/Q
+ _689_/Q
+ _690_/Q
+ _691_/Q
+ _692_/Q
+ _693_/Q
+ _694_/Q
+ _695_/Q
+ _696_/Q
+ _697_/Q
+ _698_/Q
+ _699_/HI
+ _699_/LO
+ _700_/HI
+ _700_/LO
+ _701_/HI
+ _701_/LO
+ _702_/HI
+ _702_/LO
+ _703_/HI
+ _703_/LO
+ _704_/HI
+ _704_/LO
+ _705_/HI
+ _705_/LO
+ _706_/HI
+ _706_/LO
+ _707_/HI
+ _707_/LO
+ _708_/HI
+ _708_/LO
+ _709_/HI
+ _709_/LO
+ _710_/HI
+ _710_/LO
+ _711_/HI
+ _711_/LO
+ _712_/HI
+ _712_/LO
+ _713_/HI
+ _713_/LO
+ _714_/HI
+ _714_/LO
+ _715_/HI
+ _715_/LO
+ _716_/HI
+ _716_/LO
+ _717_/HI
+ _717_/LO
+ _718_/HI
+ _718_/LO
+ _719_/HI
+ _719_/LO
+ _720_/HI
+ _720_/LO
+ _721_/HI
+ _721_/LO
+ _722_/HI
+ _722_/LO
+ _723_/HI
+ _723_/LO
+ _724_/HI
+ _724_/LO
+ _725_/HI
+ _725_/LO
+ _726_/HI
+ _726_/LO
+ _727_/HI
+ _727_/LO
+ _728_/HI
+ _728_/LO
+ _729_/HI
+ _729_/LO
+ _730_/HI
+ _730_/LO
+ _731_/HI
+ _731_/LO
+ _732_/HI
+ _732_/LO
+ _733_/HI
+ _733_/LO
+ _734_/HI
+ _734_/LO
+ _735_/HI
+ _735_/LO
+ _736_/HI
+ _736_/LO
+ _737_/HI
+ _737_/LO
+ _738_/HI
+ _738_/LO
+ _739_/HI
+ _739_/LO
+ _740_/HI
+ _740_/LO
+ _741_/HI
+ _741_/LO
+ _742_/HI
+ _742_/LO
+ _743_/HI
+ _743_/LO
+ _744_/HI
+ _744_/LO
+ _745_/HI
+ _745_/LO
+ _746_/HI
+ _746_/LO
+ _747_/HI
+ _747_/LO
+ _748_/X
+ _749_/X
+ _750_/X
+ _751_/X
+ _752_/X
+ _753_/X
+ _754_/X
+ _755_/X
+ _756_/X
+ _757_/X
+ _758_/X
+ _759_/X
+ _760_/X
+ _761_/X
+ _762_/X
+ _763_/X
+ _764_/X
+ _765_/X
+ _766_/X
+ _767_/X
+ _768_/X
+ _769_/X
+ _770_/X
+ _771_/X
+ _772_/X
+ _773_/X
+ _774_/X
+ _775_/X
+ _776_/X
+ _777_/X
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 237
+max fanout violation count 14
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 37 input ports missing set_input_delay.
+  io_in[0]
+  io_in[10]
+  io_in[11]
+  io_in[12]
+  io_in[13]
+  io_in[14]
+  io_in[15]
+  io_in[16]
+  io_in[17]
+  io_in[18]
+  io_in[19]
+  io_in[1]
+  io_in[20]
+  io_in[21]
+  io_in[22]
+  io_in[23]
+  io_in[24]
+  io_in[25]
+  io_in[26]
+  io_in[27]
+  io_in[28]
+  io_in[29]
+  io_in[2]
+  io_in[30]
+  io_in[31]
+  io_in[32]
+  io_in[33]
+  io_in[34]
+  io_in[35]
+  io_in[3]
+  io_in[4]
+  io_in[5]
+  io_in[6]
+  io_in[7]
+  io_in[8]
+  io_in[9]
+  user_clock2
+Warning: There are 109 unconstrained endpoints.
+  io_oeb[0]
+  io_oeb[10]
+  io_oeb[11]
+  io_oeb[12]
+  io_oeb[13]
+  io_oeb[14]
+  io_oeb[15]
+  io_oeb[16]
+  io_oeb[17]
+  io_oeb[18]
+  io_oeb[19]
+  io_oeb[1]
+  io_oeb[20]
+  io_oeb[21]
+  io_oeb[22]
+  io_oeb[23]
+  io_oeb[24]
+  io_oeb[25]
+  io_oeb[26]
+  io_oeb[27]
+  io_oeb[28]
+  io_oeb[29]
+  io_oeb[2]
+  io_oeb[30]
+  io_oeb[31]
+  io_oeb[32]
+  io_oeb[33]
+  io_oeb[34]
+  io_oeb[35]
+  io_oeb[3]
+  io_oeb[4]
+  io_oeb[5]
+  io_oeb[6]
+  io_oeb[7]
+  io_oeb[8]
+  io_oeb[9]
+  io_out[0]
+  io_out[10]
+  io_out[11]
+  io_out[12]
+  io_out[13]
+  io_out[14]
+  io_out[15]
+  io_out[16]
+  io_out[17]
+  io_out[18]
+  io_out[19]
+  io_out[1]
+  io_out[20]
+  io_out[21]
+  io_out[22]
+  io_out[23]
+  io_out[24]
+  io_out[25]
+  io_out[26]
+  io_out[27]
+  io_out[28]
+  io_out[29]
+  io_out[2]
+  io_out[30]
+  io_out[31]
+  io_out[32]
+  io_out[33]
+  io_out[34]
+  io_out[35]
+  io_out[3]
+  io_out[4]
+  io_out[5]
+  io_out[6]
+  io_out[7]
+  io_out[8]
+  io_out[9]
+  la_data_out[0]
+  la_data_out[10]
+  la_data_out[11]
+  la_data_out[12]
+  la_data_out[13]
+  la_data_out[14]
+  la_data_out[15]
+  la_data_out[16]
+  la_data_out[17]
+  la_data_out[18]
+  la_data_out[19]
+  la_data_out[1]
+  la_data_out[20]
+  la_data_out[21]
+  la_data_out[22]
+  la_data_out[23]
+  la_data_out[24]
+  la_data_out[25]
+  la_data_out[26]
+  la_data_out[27]
+  la_data_out[28]
+  la_data_out[29]
+  la_data_out[2]
+  la_data_out[30]
+  la_data_out[31]
+  la_data_out[3]
+  la_data_out[4]
+  la_data_out[5]
+  la_data_out[6]
+  la_data_out[7]
+  la_data_out[8]
+  la_data_out[9]
+  user_irq[0]
+  user_irq[1]
+  user_irq[2]
+  wbs_dat_o[30]
+  wbs_dat_o[31]

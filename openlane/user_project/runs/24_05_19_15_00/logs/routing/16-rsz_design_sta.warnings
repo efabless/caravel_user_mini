@@ -1,0 +1,21 @@
+[WARNING GRT-0026] Missing route to pin io_oeb[15].
+[WARNING GRT-0026] Missing route to pin io_oeb[16].
+[WARNING GRT-0026] Missing route to pin io_oeb[17].
+[WARNING GRT-0026] Missing route to pin io_oeb[18].
+[WARNING GRT-0026] Missing route to pin io_oeb[19].
+[WARNING GRT-0026] Missing route to pin io_oeb[20].
+[WARNING GRT-0026] Missing route to pin io_oeb[21].
+[WARNING GRT-0026] Missing route to pin io_oeb[22].
+[WARNING GRT-0026] Missing route to pin io_oeb[23].
+[WARNING GRT-0026] Missing route to pin io_out[15].
+[WARNING GRT-0026] Missing route to pin io_out[16].
+[WARNING GRT-0026] Missing route to pin io_out[17].
+[WARNING GRT-0026] Missing route to pin io_out[18].
+[WARNING GRT-0026] Missing route to pin io_out[19].
+[WARNING GRT-0026] Missing route to pin io_out[20].
+[WARNING GRT-0026] Missing route to pin io_out[21].
+[WARNING GRT-0026] Missing route to pin io_out[22].
+[WARNING GRT-0026] Missing route to pin io_out[23].
+Warning: There are 37 input ports missing set_input_delay.
+Warning: There are 109 unconstrained endpoints.
+[WARNING] Did not save OpenROAD database!

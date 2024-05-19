@@ -1,0 +1,20 @@
+OpenROAD d423155d69de7f683a23f6916ead418a615ad4ad 
+Features included (+) or not (-):  +Charts +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0227] LEF file: /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/RUN_2024.05.19_11.12.43/tmp/merged.nom.lef, created 13 layers, 25 vias, 441 library cells
+[INFO ODB-0127] Reading DEF file: /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/RUN_2024.05.19_11.12.43/results/routing/user_project.def
+[INFO ODB-0128] Design: user_project
+[INFO ODB-0094] 		Created 100000 Insts
+[INFO ODB-0094] 		Created 200000 Insts
+[INFO ODB-0130]     Created 316 pins.
+[INFO ODB-0131]     Created 205481 components and 769261 component-terminals.
+[INFO ODB-0132]     Created 2 special nets and 764306 connections.
+[INFO ODB-0133]     Created 1964 nets and 4906 connections.
+[INFO ODB-0134] Finished DEF file: /Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/RUN_2024.05.19_11.12.43/results/routing/user_project.def
+Top-level design name: user_project
+Found default power net 'VPWR'
+Found default ground net 'VGND'
+Found 1 power ports.
+Found 1 ground ports.
+Modified power connections of 205481/205481 cells.
