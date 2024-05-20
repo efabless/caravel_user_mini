@@ -1,0 +1,2 @@
+command used to run this sim:
+% ../../venv-cocotb/bin/caravel_cocotb -t counter_la -verbosity debug -tag rtl_verification

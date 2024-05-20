@@ -50,14 +50,11 @@ module counter #(
     input [BITS-1:0] wbs_adr_i,
     input [BITS-1:0] la_write,
     input [BITS-1:0] la_input,
-    output ready,
-    output [BITS-1:0] rdata,
-    output [BITS-1:0] count,
+    output reg ready,
+    output reg [BITS-1:0] rdata,
+    output reg [BITS-1:0] count,
     output [BITS-1:0] io_oeb
 );
-    reg ready;
-    reg [BITS-1:0] count;
-    reg [BITS-1:0] rdata;
     wire clk ; 
     wire reset ; 
     

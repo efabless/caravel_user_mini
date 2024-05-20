@@ -1,0 +1,38 @@
+#### Caravel repo info ####
+Repo: caravel-lite  (https://github.com/https://github.com/efabless/caravel-lite )
+Branch name: commit 115b8d5e48a6d01f892012385b64c873f2d9205b
+Author: d-m-bailey <d-m-bailey@users.noreply.github.com>
+Date:   Wed Dec 6 04:11:14 2023 +0000
+
+    Apply automatic changes to Manifest and README.rst
+
+
+#### Caravel Managment repo info ####
+Repo: caravel_mgmt_soc_litex  (https://github.com/https://github.com/efabless/caravel_mgmt_soc_litex )
+Branch name: commit 503eda0790085712ffef7f4ad8934c7daed3237f
+Author: Jeff DiCorpo <42048757+jeffdi@users.noreply.github.com>
+Date:   Wed Jan 3 09:00:15 2024 -0800
+
+    Merge pull request #135 from efabless/update_c_apis
+    
+    Update c APIs to fix functions that doesn't work after optimization
+
+
+#### User repo info ####
+Repo: caravel_user_mpc  (https://github.com/efabless/caravel_user_mpc )
+Branch name: main
+commit 60316a48e16708d90f8edf1172e12f7276895302
+Author: Marwan Abbas <marwan@Marwans-MacBook-Air.local>
+Date:   Sun May 19 15:34:10 2024 +0300
+
+    added initial run
+
+
+#### caravel-dynamic-sims repo info ####
+Repo: caravel_user_mpc  (https://github.com/efabless/caravel_user_mpc )
+Branch name: main
+commit 60316a48e16708d90f8edf1172e12f7276895302
+Author: Marwan Abbas <marwan@Marwans-MacBook-Air.local>
+Date:   Sun May 19 15:34:10 2024 +0300
+
+    added initial run

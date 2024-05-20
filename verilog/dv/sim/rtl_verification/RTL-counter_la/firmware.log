@@ -1,0 +1,20 @@
+command:docker run  --init -it --sig-proxy=true  -u $(id -u marwan):$(id -g marwan)   -v /Users/marwan/work/caravel_user_mpc/verilog/dv/sim/hex_files/:/Users/marwan/work/caravel_user_mpc/verilog/dv/sim/hex_files/ -v /Users/marwan/work/caravel_user_mpc/verilog/dv:/Users/marwan/work/caravel_user_mpc/verilog/dv -v /Users/marwan/work/caravel_user_mpc/caravel:/Users/marwan/work/caravel_user_mpc/caravel -v /Users/marwan/work/caravel_user_mpc/mgmt_core_wrapper:/Users/marwan/work/caravel_user_mpc/mgmt_core_wrapper -v /Users/marwan/work/caravel_user_mpc/verilog/dv/sim/rtl_verification/RTL-counter_la:/Users/marwan/work/caravel_user_mpc/verilog/dv/sim/rtl_verification/RTL-counter_la -v /Users/marwan/work/caravel_user_mpc:/Users/marwan/work/caravel_user_mpc efabless/dv:cocotb sh -ec ' /opt/riscv/bin//riscv32-unknown-linux-gnu-gcc   -I/Users/marwan/work/caravel_user_mpc/mgmt_core_wrapper/verilog/dv/firmware -I/Users/marwan/work/caravel_user_mpc/mgmt_core_wrapper/verilog/dv/firmware/APIs -I/Users/marwan/work/caravel_user_mpc/mgmt_core_wrapper/verilog/dv/generated  -I/Users/marwan/work/caravel_user_mpc/mgmt_core_wrapper/verilog/dv/ -I/Users/marwan/work/caravel_user_mpc/mgmt_core_wrapper/verilog/common -I/Users/marwan/work/caravel_user_mpc/verilog/dv/cocotb  -O2 -g -march=rv32i_zicsr -mabi=ilp32 -D__vexriscv__ -ffreestanding -nostdlib -Wl,-Bstatic,-T,/Users/marwan/work/caravel_user_mpc/verilog/dv/sim/rtl_verification/RTL-counter_la/linker_script.lds,--strip-debug  -o /Users/marwan/work/caravel_user_mpc/verilog/dv/sim/hex_files//counter_la.elf /Users/marwan/work/caravel_user_mpc/mgmt_core_wrapper/verilog/dv/firmware/crt0_vex.S /Users/marwan/work/caravel_user_mpc/mgmt_core_wrapper/verilog/dv/firmware/isr.c /Users/marwan/work/caravel_user_mpc/verilog/dv/cocotb/counter_tests/counter_la/counter_la.c && /opt/riscv/bin//riscv32-unknown-linux-gnu-objdump -d -S /Users/marwan/work/caravel_user_mpc/verilog/dv/sim/hex_files//counter_la.elf > /Users/marwan/work/caravel_user_mpc/verilog/dv/sim/hex_files//counter_la.lst  && /opt/riscv/bin//riscv32-unknown-linux-gnu-objcopy -O verilog /Users/marwan/work/caravel_user_mpc/verilog/dv/sim/hex_files//counter_la.elf /Users/marwan/work/caravel_user_mpc/verilog/dv/sim/hex_files//counter_la.hex  && sed -ie "s/@10/@00/g" /Users/marwan/work/caravel_user_mpc/verilog/dv/sim/hex_files//counter_la.hex'
+
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+In file included from /Users/marwan/work/caravel_user_mpc/mgmt_core_wrapper/verilog/dv/firmware/isr.c:8:
+/Users/marwan/work/caravel_user_mpc/mgmt_core_wrapper/verilog/dv/firmware/defs.h:273: warning: "reg_debug_2" redefined
+  273 | #define reg_debug_2 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE))
+      | 
+/Users/marwan/work/caravel_user_mpc/mgmt_core_wrapper/verilog/dv/firmware/defs.h:147: note: this is the location of the previous definition
+  147 | #define reg_debug_2 (*(volatile uint32_t*)0x300FFFFC)
+      | 
+/Users/marwan/work/caravel_user_mpc/mgmt_core_wrapper/verilog/dv/firmware/defs.h:274: warning: "reg_debug_1" redefined
+  274 | #define reg_debug_1 (*(volatile unsigned int*)(USER_SPACE_ADDR + USER_SPACE_SIZE - 4))
+      | 
+/Users/marwan/work/caravel_user_mpc/mgmt_core_wrapper/verilog/dv/firmware/defs.h:146: note: this is the location of the previous definition
+  146 | #define reg_debug_1 (*(volatile uint32_t*)0x300FFFF8)
+      | 
+/Users/marwan/work/caravel_user_mpc/verilog/dv/cocotb/counter_tests/counter_la/counter_la.c:1:10: fatal error: common.h: No such file or directory
+    1 | #include <common.h>
+      |          ^~~~~~~~~~
+compilation terminated.

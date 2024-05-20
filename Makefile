@@ -18,6 +18,7 @@ MAKEFLAGS+=--warn-undefined-variables
 export CARAVEL_ROOT?=$(PWD)/caravel
 PRECHECK_ROOT?=${HOME}/mpw_precheck
 export MCW_ROOT?=$(PWD)/mgmt_core_wrapper
+export MPC_ROOT?=$(PWD)/mpc
 SIM?=RTL
 
 # Install lite version of caravel, (1): caravel-lite, (0): caravel
@@ -113,8 +114,17 @@ simenv:
 simenv-cocotb:
 	docker pull efabless/dv:cocotb
 
+.PHONY: install_mpc
+install_mpc:
+	if [ -d "$(MPC_ROOT)" ]; then\
+		echo "Deleting exisiting $(MPC_ROOT)" && \
+		rm -rf $(MPC_ROOT) && sleep 2;\
+	fi
+	echo "Installing $(MPC_ROOT).."
+	git clone https://github.com/efabless/mpc.git $(MPC_ROOT) --depth=1
+
 .PHONY: setup
-setup: check_dependencies install check-env install_mcw openlane pdk-with-volare setup-timing-scripts setup-cocotb precheck
+setup: check_dependencies install check-env install_mcw install_mpc openlane pdk-with-volare setup-timing-scripts setup-cocotb precheck
 
 # Openlane
 blocks=$(shell cd openlane && find * -maxdepth 0 -type d)

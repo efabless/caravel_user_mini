@@ -1,0 +1,14 @@
+# Caravel user project includes	     
+-v $(USER_PROJECT_VERILOG)/rtl/user_defines.v 
+-v $(USER_PROJECT_VERILOG)/gl/user_project_wrapper.v	     
+-v $(USER_PROJECT_VERILOG)/gl/user_project_1.v 
+-v $(USER_PROJECT_VERILOG)/gl/user_project_3.v 
+-v $(USER_PROJECT_VERILOG)/gl/user_project_5.v 
+-v $(USER_PROJECT_VERILOG)/gl/user_project_7.v 
+
+-v $(USER_PROJECT_VERILOG)/gl/caravel_core.v
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_0402.v
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_0403.v
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_0801.v
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_1803.v
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_1808.v
