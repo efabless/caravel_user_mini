@@ -10,13 +10,14 @@ For more information about the MPC project, visit the [MPC GitHub repository](ht
 
 To install all dependencies and start working on your project, follow these steps:
 
-1. Clone the repository:
+1. Press the "Use this template" button to create your own repository.
+2. Clone the repository:
    ```bash
-   git clone https://github.com/efabless/caravel_user_mpc.git
-   cd caravel_user_mpc
+   git clone https://github.com/<yourusername>/<your_new_repo_name>.git
+   cd <your_new_repo_name>
    ```
 
-2. Set up the environment:
+3. Set up the environment:
    ```bash
    make setup
    ```
