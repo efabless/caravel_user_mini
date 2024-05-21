@@ -11,12 +11,13 @@ void main(){
     GPIOs_configure(36, GPIO_MODE_MGMT_STD_INPUT_PULLDOWN);
     GPIOs_configure(37, GPIO_MODE_MGMT_STD_INPUT_PULLDOWN);
     GPIOs_loadConfigs(); // load the configuration 
-    // enable_user_interface();
-
     ManagmentGpio_write(1); // configuration finished 
+    User_enableIF();
+
     
     LogicAnalyzer_write(0,7);
     LogicAnalyzer_outputEnable(0,0xC0000000);
+    ManagmentGpio_write(0); // configuration finished 
     LogicAnalyzer_outputEnable(0,0xFFFFFFFF);
 
     return;
