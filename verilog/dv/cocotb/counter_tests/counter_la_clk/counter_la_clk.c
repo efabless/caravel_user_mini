@@ -13,6 +13,10 @@ void main(){
     // enable_user_interface();
     // configure la 64 (clk enable by la) as output from cpu
     // writing 1 in bit 64(first bit in reg 2) to reset 
+    User_enableIF();
+    LogicAnalyzer_write(0,7);
+    LogicAnalyzer_outputEnable(0,0xC0000000);
+    ManagmentGpio_write(0); // configuration finished 
     LogicAnalyzer_write(0,0);
     LogicAnalyzer_outputEnable(0,0xBFFFFFFF);
     ManagmentGpio_write(1); // configuration finished 

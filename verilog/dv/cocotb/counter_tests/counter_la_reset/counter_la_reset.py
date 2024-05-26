@@ -15,15 +15,15 @@ async def counter_la_reset(dut):
     cocotb.log.info(f"[TEST] seleceted project = {selected_projeted}")  
     caravelEnv.drive_gpio_in((37, 36), selected_projeted)
     await caravelEnv.wait_mgmt_gpio(1)
-    await caravelEnv.release_csb()
     cocotb.log.info(f"[TEST] finish configuration") 
     cocotb.log.info(f"[TEST] project {selected_projeted} selected, counter step = {counter_step}") 
     
-    overwrite_val = 0 # because of the reset 
+    overwrite_val = 7 
+    await caravelEnv.wait_mgmt_gpio(0) # wait until writing 7 through
     # expect value bigger than 7 
-    received_val = caravelEnv.monitor_gpio(29,0).integer 
+    received_val = int ((caravelEnv.monitor_gpio(29,0).binstr ),2) 
     counter = received_val
-    if received_val <= overwrite_val :
+    if received_val < overwrite_val :
         cocotb.log.error(f"counter started late and value captured after configuration is smaller than overwrite value: {overwrite_val} receieved: {received_val}")
     await cocotb.triggers.ClockCycles(caravelEnv.clk,1)
 
@@ -38,8 +38,8 @@ async def counter_la_reset(dut):
     counter =0
 
     for i in range(100):
-        if counter != caravelEnv.monitor_gpio(29,0).integer:
-            cocotb.log.error(f"counter have wrong value expected = {counter} recieved = {caravelEnv.monitor_gpio(29,0).integer}")
+        if counter != int ((caravelEnv.monitor_gpio(29,0).binstr ),2) :
+            cocotb.log.error(f"counter have wrong value expected = {counter} recieved = {int ((caravelEnv.monitor_gpio(29,0).binstr ),2) }")
         await cocotb.triggers.ClockCycles(caravelEnv.clk,1)
         counter +=counter_step
     
@@ -51,5 +51,9 @@ async def get_reset_val(caravelEnv):
     # cocotb.log.info(caravelEnv.user_hdl.user_project)
     # cocotb.log.info(dir(caravelEnv.user_hdl._sub_handles))
     # all project shares the same value
-    return caravelEnv.user_hdl.user_project.count.reset.value
-
+    try:
+        return int(caravelEnv.user_hdl.la_data_in.value.binstr[-32],2)
+    except ValueError:
+        return "x"
+    return int(caravelEnv.user_hdl.la_data_in.value.binstr[31],2)
+# 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000

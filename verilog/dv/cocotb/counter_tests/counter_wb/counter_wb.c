@@ -1,5 +1,19 @@
+// SPDX-FileCopyrightText: 2023 Efabless Corporation
+
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+
+//      http://www.apache.org/licenses/LICENSE-2.0
+
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+
 #include <firmware_apis.h>
-// #include "../common/common.h"
 
 void main(){
     // Enable managment gpio as output to use as indicator for finishing configuration  
@@ -11,11 +25,17 @@ void main(){
     GPIOs_configure(36, GPIO_MODE_MGMT_STD_INPUT_PULLDOWN);
     GPIOs_configure(37, GPIO_MODE_MGMT_STD_INPUT_PULLDOWN);
     GPIOs_loadConfigs(); // load the configuration 
-    // enable_user_interface(); // this necessary when reading or writing between wishbone and user project if interface isn't enabled no ack would be recieve and the command will be stuck
+    User_enableIF(); // this necessary when reading or writing between wishbone and user project if interface isn't enabled no ack would be recieve and the command will be stuck
+    // user la reset and wb clk
+    LogicAnalyzer_outputEnable(0,0x40000000);
+    // reset counter 
+    LogicAnalyzer_write(0,0x80000000);
+    LogicAnalyzer_write(0,0);
+    LogicAnalyzer_outputEnable(0,0x7FFFFFFF);
     ManagmentGpio_write(1); // configuration finished 
     // writing to any address inside user project address space would reload the counter value
-    USER_writeWord(0x7,0x1);
-    ManagmentGpio_write(1); // start counting from 7
+    USER_writeWord(0x7,0x88);
+    ManagmentGpio_write(0); // start counting from 0
 
     return;
 }

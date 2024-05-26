@@ -13,8 +13,12 @@ void main(){
     GPIOs_loadConfigs(); // load the configuration 
     // enable_user_interface();
     ManagmentGpio_write(1); // configuration finished 
-    // configure la 65 (reset enable by la) as output from cpu
-    // writing 1 in bit 65(second bit in reg 2) to reset 
+    User_enableIF();
+    LogicAnalyzer_write(0,7);
+    LogicAnalyzer_outputEnable(0,0xC0000000);
+    ManagmentGpio_write(0); // configuration finished 
+
+
     LogicAnalyzer_write(0,0x80000000);
     LogicAnalyzer_outputEnable(0,0x7FFFFFFF);
     LogicAnalyzer_outputEnable(0,0xFFFFFFFF);
