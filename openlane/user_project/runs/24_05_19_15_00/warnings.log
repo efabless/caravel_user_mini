@@ -1,3 +1,0 @@
-[WARNING]: The variable name DESIGN_IS_CORE was renamed to FP_PDN_MULTILAYER. Update your configuration file.
-[WARNING]: VSRC_LOC_FILES was not given a value, which may make the results of IR drop analysis inaccurate. If you are not integrating a top-level chip for manufacture, you may ignore this warning, otherwise, see the documentation for VSRC_LOC_FILES.
-[WARNING]: There are max fanout violations in the design at the Typical corner. Please refer to '../Users/marwan/work/caravel_user_mpc/openlane/user_project/runs/24_05_19_15_00/reports/signoff/32-sta-rcx_nom/multi_corner_sta.checks.rpt'.

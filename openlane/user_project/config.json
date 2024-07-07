@@ -1,6 +1,6 @@
 {
     "DESIGN_NAME": "user_project",
-    "DESIGN_IS_CORE": 0,
+    "FP_PDN_MULTILAYER": 0,
     "VERILOG_FILES": [
         "dir::../../verilog/rtl/user_project.v",
         "dir::../../verilog/rtl/counter.v"
