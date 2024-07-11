@@ -16,9 +16,9 @@
 MAKEFLAGS+=--warn-undefined-variables
 
 export CARAVEL_ROOT?=$(PWD)/caravel
+export UPRJ_ROOT?=$(PWD)
 PRECHECK_ROOT?=${HOME}/mpw_precheck
 export MCW_ROOT?=$(PWD)/mgmt_core_wrapper
-export MPC_ROOT?=$(PWD)/mpc
 SIM?=RTL
 
 # Install lite version of caravel, (1): caravel-lite, (0): caravel
@@ -44,9 +44,10 @@ export ROOTLESS
 
 ifeq ($(PDK),sky130A)
 	SKYWATER_COMMIT=f70d8ca46961ff92719d8870a18a076370b85f6c
+	export OPEN_PDKS_COMMIT_LVS?=6d4d11780c40b20ee63cc98e645307a9bf2b2ab8
 	export OPEN_PDKS_COMMIT?=78b7bc32ddb4b6f14f76883c2e2dc5b5de9d1cbc
-	export OPENLANE_TAG?=2024.05.14
-	MPW_TAG ?= mpw-9i
+	export OPENLANE_TAG?=2023.07.19-1
+	MPW_TAG ?= mpw-9j
 
 ifeq ($(CARAVEL_LITE),1)
 	CARAVEL_NAME := caravel-lite
@@ -62,9 +63,10 @@ endif
 
 ifeq ($(PDK),sky130B)
 	SKYWATER_COMMIT=f70d8ca46961ff92719d8870a18a076370b85f6c
+	export OPEN_PDKS_COMMIT_LVS?=6d4d11780c40b20ee63cc98e645307a9bf2b2ab8
 	export OPEN_PDKS_COMMIT?=78b7bc32ddb4b6f14f76883c2e2dc5b5de9d1cbc
 	export OPENLANE_TAG?=2023.07.19-1
-	MPW_TAG ?= mpw-9i
+	MPW_TAG ?= mpw-9j
 
 ifeq ($(CARAVEL_LITE),1)
 	CARAVEL_NAME := caravel-lite
@@ -114,17 +116,8 @@ simenv:
 simenv-cocotb:
 	docker pull efabless/dv:cocotb
 
-.PHONY: install_mpc
-install_mpc:
-	if [ -d "$(MPC_ROOT)" ]; then\
-		echo "Deleting exisiting $(MPC_ROOT)" && \
-		rm -rf $(MPC_ROOT) && sleep 2;\
-	fi
-	echo "Installing $(MPC_ROOT).."
-	git clone https://github.com/efabless/mpc.git $(MPC_ROOT) --depth=1
-
 .PHONY: setup
-setup: check_dependencies install check-env install_mcw install_mpc openlane pdk-with-volare setup-timing-scripts setup-cocotb precheck
+setup: check_dependencies install check-env install_mcw openlane pdk-with-volare setup-timing-scripts setup-cocotb precheck
 
 # Openlane
 blocks=$(shell cd openlane && find * -maxdepth 0 -type d)
@@ -254,7 +247,7 @@ precheck:
 	@docker pull efabless/mpw_precheck:latest
 
 .PHONY: run-precheck
-run-precheck: check-pdk check-precheck
+run-precheck: check-pdk check-precheck enable-lvs-pdk
 	@if [ "$$DISABLE_LVS" = "1" ]; then\
 		$(eval INPUT_DIRECTORY := $(shell pwd)) \
 		cd $(PRECHECK_ROOT) && \
@@ -281,6 +274,9 @@ run-precheck: check-pdk check-precheck
 		efabless/mpw_precheck:latest bash -c "cd $(PRECHECK_ROOT) ; python3 mpw_precheck.py --input_directory $(INPUT_DIRECTORY) --pdk_path $(PDK_ROOT)/$(PDK)"; \
 	fi
 
+.PHONY: enable-lvs-pdk
+enable-lvs-pdk:
+	$(UPRJ_ROOT)/venv/bin/volare enable $(OPEN_PDKS_COMMIT_LVS)
 
 BLOCKS = $(shell cd lvs && find * -maxdepth 0 -type d)
 LVS_BLOCKS = $(foreach block, $(BLOCKS), lvs-$(block))
