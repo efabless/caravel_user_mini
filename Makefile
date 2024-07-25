@@ -16,6 +16,7 @@
 MAKEFLAGS+=--warn-undefined-variables
 
 export CARAVEL_ROOT?=$(PWD)/caravel
+export MINI_ROOT?=$(PWD)/caravel_mini
 export UPRJ_ROOT?=$(PWD)
 PRECHECK_ROOT?=${HOME}/mpw_precheck
 export MCW_ROOT?=$(PWD)/mgmt_core_wrapper
@@ -106,6 +107,15 @@ install:
 	echo "Installing $(CARAVEL_NAME).."
 	git clone -b $(CARAVEL_TAG) $(CARAVEL_REPO) $(CARAVEL_ROOT) --depth=1
 
+.PHONY: install_mini
+install_mini:
+	if [ -d "$(MINI_ROOT)" ]; then\
+		echo "Deleting exisiting $(MINI_ROOT)" && \
+		rm -rf $(MINI_ROOT) && sleep 2;\
+	fi
+	echo "Installing $(MINI_ROOT).."
+	git clone https://github.com/efabless/caravel_mini.git $(MINI_ROOT) --depth=1
+
 # Install DV setup
 .PHONY: simenv
 simenv:
@@ -117,7 +127,7 @@ simenv-cocotb:
 	docker pull efabless/dv:cocotb
 
 .PHONY: setup
-setup: check_dependencies install check-env install_mcw openlane pdk-with-volare setup-timing-scripts setup-cocotb precheck
+setup: check_dependencies install install_mini check-env install_mcw openlane pdk-with-volare setup-timing-scripts setup-cocotb precheck
 
 # Openlane
 blocks=$(shell cd openlane && find * -maxdepth 0 -type d)
@@ -354,11 +364,11 @@ setup-cocotb: install-caravel-cocotb setup-cocotb-env simenv-cocotb
 
 .PHONY: cocotb-verify-all-rtl
 cocotb-verify-all-rtl: 
-	@(cd $(PROJECT_ROOT)/verilog/dv/cocotb && $(PROJECT_ROOT)/venv-cocotb/bin/caravel_cocotb -tl user_proj_tests/user_proj_tests.yaml )
+	@(cd $(PROJECT_ROOT)/verilog/dv/cocotb && $(PROJECT_ROOT)/venv-cocotb/bin/caravel_cocotb -tl counter_tests/counter_tests.yaml )
 	
 .PHONY: cocotb-verify-all-gl
 cocotb-verify-all-gl:
-	@(cd $(PROJECT_ROOT)/verilog/dv/cocotb && $(PROJECT_ROOT)/venv-cocotb/bin/caravel_cocotb -tl user_proj_tests/user_proj_tests_gl.yaml -verbosity quiet)
+	@(cd $(PROJECT_ROOT)/verilog/dv/cocotb && $(PROJECT_ROOT)/venv-cocotb/bin/caravel_cocotb -tl counter_tests/counter_tests_gl.yaml -verbosity quiet)
 
 $(cocotb-dv-targets-rtl): cocotb-verify-%-rtl: 
 	@(cd $(PROJECT_ROOT)/verilog/dv/cocotb && $(PROJECT_ROOT)/venv-cocotb/bin/caravel_cocotb -t $*  )

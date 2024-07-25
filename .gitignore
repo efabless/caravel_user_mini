@@ -9,6 +9,8 @@
 /env
 /venv
 /caravel
+/runs
+/caravel_mini
 /dependencies
 /mgmt_core_wrapper
 /logs

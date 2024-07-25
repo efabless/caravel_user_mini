@@ -1,7 +1,7 @@
 # Caravel user project includes
--v $(USER_PROJECT_VERILOG)/../mpc/verilog/rtl/user_defines.v 
--v $(USER_PROJECT_VERILOG)/../mpc/verilog/rtl/user_project_wrapper.v	     
--v $(USER_PROJECT_VERILOG)/rtl/user_project.v 
+-v $(USER_PROJECT_VERILOG)/../caravel_mini/verilog/rtl/user_defines.v 
+-v $(USER_PROJECT_VERILOG)/../caravel_mini/verilog/rtl/user_project_wrapper.v	     
+-v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper_mini4.v 
 -v $(USER_PROJECT_VERILOG)/rtl/counter.v 
 
  
