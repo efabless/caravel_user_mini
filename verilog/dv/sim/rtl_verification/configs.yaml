@@ -1,6 +1,0 @@
-clock: 25
-max_err: 3
-PDK: sky130
-CARAVEL_ROOT: /Users/marwan/work/caravel_user_mpc/caravel
-MCW_ROOT: /Users/marwan/work/caravel_user_mpc/mgmt_core_wrapper
-PDK_ROOT: /Users/marwan/work/caravel_user_mpc/dependencies/pdks/sky130A
