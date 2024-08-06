@@ -21,7 +21,7 @@ async def counter_la_reset(dut):
     overwrite_val = 7 
     await caravelEnv.wait_mgmt_gpio(0) # wait until writing 7 through
     # expect value bigger than 7 
-    received_val = int ((caravelEnv.monitor_gpio(29,0).binstr ),2) 
+    received_val = int ((caravelEnv.monitor_gpio(35,6).binstr ),2) 
     counter = received_val
     if received_val < overwrite_val :
         cocotb.log.error(f"counter started late and value captured after configuration is smaller than overwrite value: {overwrite_val} receieved: {received_val}")
@@ -38,8 +38,8 @@ async def counter_la_reset(dut):
     counter =0
 
     for i in range(100):
-        if counter != int ((caravelEnv.monitor_gpio(29,0).binstr ),2) :
-            cocotb.log.error(f"counter have wrong value expected = {counter} recieved = {int ((caravelEnv.monitor_gpio(29,0).binstr ),2) }")
+        if counter != int ((caravelEnv.monitor_gpio(35,6).binstr ),2) :
+            cocotb.log.error(f"counter have wrong value expected = {counter} recieved = {int ((caravelEnv.monitor_gpio(35,6).binstr ),2) }")
         await cocotb.triggers.ClockCycles(caravelEnv.clk,1)
         counter +=counter_step
     

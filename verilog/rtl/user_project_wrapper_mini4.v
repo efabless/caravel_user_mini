@@ -54,7 +54,7 @@ module user_project_wrapper_mini4 #(
     assign io_out = io_in;
 `else
     wire valid = wbs_cyc_i && wbs_stb_i;
-    assign io_oeb[35:32] = 6'h3f;
+    // assign io_oeb[35:32] = 6'h3f;
 
     counter #(.COUNT_STEP(COUNT_STEP)) count(
         .wb_clk_i(wb_clk_i),
@@ -69,8 +69,8 @@ module user_project_wrapper_mini4 #(
         .la_input(la_data_in[29:0]),
         .ready(wbs_ack_o),
         .rdata(wbs_dat_o[BITS-1:0]),
-        .count(io_out[BITS-1:0]),
-        .io_oeb(io_oeb[BITS-1:0])
+        .count(io_out[35:6]),
+        .io_oeb(io_oeb[35:6])
 
     );
 `endif

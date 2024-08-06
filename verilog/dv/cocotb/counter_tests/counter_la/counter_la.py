@@ -33,7 +33,7 @@ async def counter_la(dut):
     # expect value bigger than 7 
     await caravelEnv.wait_mgmt_gpio(0) # wait until writing 7 through
 
-    received_val = int ((caravelEnv.monitor_gpio(29,0).binstr ),2) 
+    received_val = int ((caravelEnv.monitor_gpio(35,6).binstr ),2) 
     counter = overwrite_val
 
     if received_val != counter :
@@ -43,12 +43,12 @@ async def counter_la(dut):
     # wait until the LA writing is disabled 
     while (received_val == counter): 
         await cocotb.triggers.ClockCycles(caravelEnv.clk,1)
-        received_val = int ((caravelEnv.monitor_gpio(29,0).binstr ),2) 
+        received_val = int ((caravelEnv.monitor_gpio(35,6).binstr ),2) 
 
     counter = received_val
     for i in range(100):
-        if counter != int ((caravelEnv.monitor_gpio(29,0).binstr ),2) :
-            cocotb.log.error(f"counter have wrong value expected = {counter} recieved = {int ((caravelEnv.monitor_gpio(29,0).binstr ),2) }")
+        if counter != int ((caravelEnv.monitor_gpio(35,6).binstr ),2) :
+            cocotb.log.error(f"counter have wrong value expected = {counter} recieved = {int ((caravelEnv.monitor_gpio(35,6).binstr ),2) }")
         await cocotb.triggers.ClockCycles(caravelEnv.clk,1)
         counter +=1
     
