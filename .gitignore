@@ -10,7 +10,8 @@
 /venv
 /caravel
 /runs
-/caravel_mini
 /dependencies
 /mgmt_core_wrapper
 /logs
+/lvs_results
+/caravel_mini
