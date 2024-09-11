@@ -19,12 +19,12 @@ async def counter_la_clk(dut):
     cocotb.log.info(f"[TEST] finish configuration") 
     cocotb.log.info(f"[TEST] project {selected_projeted} selected, counter step = {counter_step}") 
     # expect value bigger than 7 
-    received_val = caravelEnv.monitor_gpio(29,0).integer 
+    received_val = caravelEnv.monitor_gpio(35,6).integer 
     counter = received_val
 
     for i in range(5):
-        if counter != caravelEnv.monitor_gpio(29,0).integer:
-            cocotb.log.error(f"counter have wrong value expected = {counter} recieved = {caravelEnv.monitor_gpio(29,0).integer}")
+        if counter != caravelEnv.monitor_gpio(35,6).integer:
+            cocotb.log.error(f"counter have wrong value expected = {counter} recieved = {caravelEnv.monitor_gpio(35,6).integer}")
         await wait_la_clock_cycle(caravelEnv)
         counter +=counter_step
 
