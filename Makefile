@@ -368,13 +368,13 @@ cocotb-verify-all-rtl:
 	
 .PHONY: cocotb-verify-all-gl
 cocotb-verify-all-gl:
-	@(cd $(PROJECT_ROOT)/verilog/dv/cocotb && $(PROJECT_ROOT)/venv-cocotb/bin/caravel_cocotb -tl counter_tests/counter_tests_gl.yaml -verbosity quiet)
+	@(cd $(PROJECT_ROOT)/verilog/dv/cocotb && $(PROJECT_ROOT)/venv-cocotb/bin/caravel_cocotb -tl counter_tests/counter_tests_gl.yaml -sim GL)
 
 $(cocotb-dv-targets-rtl): cocotb-verify-%-rtl: 
 	@(cd $(PROJECT_ROOT)/verilog/dv/cocotb && $(PROJECT_ROOT)/venv-cocotb/bin/caravel_cocotb -t $*  )
 	
 $(cocotb-dv-targets-gl): cocotb-verify-%-gl:
-	@(cd $(PROJECT_ROOT)/verilog/dv/cocotb && $(PROJECT_ROOT)/venv-cocotb/bin/caravel_cocotb -t $* -verbosity quiet)
+	@(cd $(PROJECT_ROOT)/verilog/dv/cocotb && $(PROJECT_ROOT)/venv-cocotb/bin/caravel_cocotb -t $* -sim GL)
 
 ./verilog/gl/user_project_wrapper.v:
 	$(error you don't have $@)
